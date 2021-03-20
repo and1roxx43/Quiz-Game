@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Quiz Game</title>
+    <link rel="stylesheet" href="./assets/style.css">
+</head>
+<body>
+    <header>
+        <h1>Quiz Game</h1>
+        <section>
+            <h3 id="timeElement">Time: <span id="timer">00</span> </h3>
+        </section>    
+    </header>
+
+    <main class="container">
+        <article id="intro">
+            <p>The game starts when you click on the <span>Start Quiz </span>button, you will be presented with a series of questions. Answering a question incorrectly, 5 seconds will be removed from the timer. When all questions are answered, or the timer reaches 0, then the game is over. You will then be able to save your score and initials.</p>
+        </article>
+     
+        
+        <section id="start-container">
+            
+            <button id="btn-start">Start Quiz!</button>
+        </section>
+        <section>
+            <section id="highscore">
+                <h1>High Score</h1>
+                <p>Your final score is: <span id="finalscore">0</span></p>
+            </section>
+        </section>
+        <section id="quiz-container">
+            <section id="quiz-wrapper">
+                <section id="question"><p>Question: What does HTML mean?</p>
+                </section>
+                <section id="choices">
+                    <button class="btn-choice" id="choiceA" >A</button>
+                    <button class="btn-choice" id="choiceB" >B</button>
+                    <button class="btn-choice" id="choiceC" >C</button>
+                    <button class="btn-choice" id="choiceD" >D</button>
+                </section>
+                <section>
+                    <p id="result"></p>
+                </section>
+            </section>
+        
+        </section>
+        <section id="form-initial">
+          <form>
+            <input id="input-text" readonly >
+            <input type="text" id="initial" placeholder="Enter Initial" maxlength="5">
+            <input type="submit" value="Submit" id="btn-initial">
+        </form>
+
+        </section>
+        <section id="btn-back">
+            <button class="goback-btn">Go Back</button>
+        </section>
+    </main>
+    
+    <footer>
+        <p>Made with &hearts; by Andrew Quenette 2021</p>
+    </footer>
+
+    <script src="./assets/app.js"></script>
+</body>
+</html>
