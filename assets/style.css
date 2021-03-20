@@ -1,5 +1,7 @@
+/* Using Monserrat as primary font */
 @import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500&display=swap');
 
+/* Declaration of variables */
 :root{
     --bg-color: #000000e0;
     --hd-color: #b3b9c2;
@@ -14,14 +16,17 @@
     --choice-btn: #2e0f66;
     --choice-btn-color: #fff;
     --choice-border: #000;
+    --choice-hover: #4d0d4d;
 }
 
+/* All settings */
 * {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
 }
 
+/* Body element */
 body {
    background: var(--bg-color);
    font-family: 'Montserrat', sans-serif;
@@ -30,6 +35,7 @@ body {
    line-height: 1.5em;
 }
 
+/* Header element */
 header {
     color: var(--hd-color);
     display: flex;
@@ -40,17 +46,19 @@ header {
     height:10vh;
     width: 100%;
 }
-
+/* h1 element has a 3rem font-size and 50px padding */
 h1{
     font-size: 3rem;
     padding:50px;
 }
 
+/* Time element is set to none on landing page */
 #timeElement{
     display: none;
 
 }
 
+/* Intro and description of the quiz game */
 #intro {
     color: var(--hd-color);
     line-height: 1.3;
@@ -59,27 +67,31 @@ h1{
     width: 55%;
 }
 
+/* All span set to have the same color */
 span {
     color: var(--btn-hover)
 }
 
+/* All h3 and p set to have font size of 1.5rem and letter spacing 0f 0.3rem */
 h3, p {
     font-size: 1.5rem;
     letter-spacing: .3rem;
 }
 
+/* Main containerset with a height of 80% and margin of 50px */
 .container {
     height: 80%;
     margin: 50px;
 }
 
+/* Start button container set to flex and centered */
 #start-container{
     display: flex;
     justify-content: center;
     align-items: center;
 }
 
-
+/* Start button set with a border radius of 50% and no ouline */
 #btn-start{
     background-color: var(--hd-color);
     border:15px solid var(--border-btn);
@@ -91,12 +103,14 @@ h3, p {
     padding: 50px;
 }
 
+/* Start button when in hover state */
 #btn-start:hover{
     background-color: var(--btn-hover);
     color: var(--bg-color);
     transform: scale(1.1);
 }
 
+/* section high score set to flex and centered and display to none*/
 #highscore {
     color: var(--hd-color);
     display:flex;
@@ -107,6 +121,7 @@ h3, p {
     display:none;
 }
 
+/* Quiz container set to flex */
 #quiz-container {
    display: flex;
    flex-direction: row;
@@ -115,11 +130,12 @@ h3, p {
    display:none;
 }
 
-
+/* Question with a padding of 10px */
 #question {
     padding: 10px;
 }
 
+/* main quiz area */
 #quiz-wrapper {
     background-color: var(--quiz-wrap);
     color: var(--hd-color);
@@ -131,7 +147,7 @@ h3, p {
     width: 35%;
 }
 
-
+/* choice elements */
 .btn-choice {
     display: flex;
     font-size: 1.2rem;
@@ -146,10 +162,12 @@ h3, p {
     width: 100%;
 }
 
+/* choice element in hover state */
 .btn-choice:hover {
-    background-color: rgb(77, 13, 77);
+    background-color: var(--choice-hover);
 }
 
+/* Form initial element set to flex */
 #form-initial {
     display: flex;
     justify-content: center;
@@ -159,6 +177,7 @@ h3, p {
     display: none;
 }
 
+/* User initial input */
 #form-initial input {
     display: block;
     border: 1px solid var(--border-btn);
@@ -169,17 +188,20 @@ h3, p {
     width: 400px;
 }
 
+/* Initial submit button */
 #form-initial input[type="submit"]{
     border-radius: 20px;   
     width: 50%;
     outline: none;
 }
 
+/* Initial submit button hover state */
 #form-initial input[type="submit"]:hover{
     background-color: var(--btn-hover);
     
 }
 
+/* user input  */
 #input-text {
     resize: none;
     font-size: 20px;
@@ -187,12 +209,14 @@ h3, p {
     outline: none;
 }
 
+/* section of back button */
 #btn-back {
     display: flex;
     justify-content: center;
     align-items: center;
 }
 
+/* back button element */
 .goback-btn {
     background-color: var(--btn-back);
     border: none;
@@ -206,11 +230,13 @@ h3, p {
     display: none;
 }
 
+/* back utton in hover state */
 .goback-btn:hover{
     background-color: #333;
     transform: scale(1.1);
 }
 
+/* page footer */
 footer {
     /* height: 10vh; */
     text-align: center;
@@ -221,6 +247,7 @@ footer p {
     color: var(--hd-color)
 }
 
+/* media screen for max width of 1450px */
 @media screen and (max-width: 1450px){
 
     h1{
@@ -237,7 +264,7 @@ footer p {
 }
 
 
-
+/* media screen for max width of 1090px */
 @media screen and (max-width:1090px){
    h1{
        font-size: 2rem;
@@ -259,6 +286,7 @@ footer p {
     }
 }
 
+/* media screen for max width of 812px */
 @media screen and (max-width:812px){
     body {
         height: 100vh;
@@ -289,12 +317,14 @@ footer p {
     }
 }
 
+/* media screen for max width of 768px */
 @media screen and (max-width:768px) {
     #intro {
        width: 80%;
    }
 }
 
+/* media screen for max width of 375px */
 @media screen and (max-width: 375px){
 
     body {

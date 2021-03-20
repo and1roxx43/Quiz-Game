@@ -37,7 +37,7 @@ const choiceD = document.getElementById('choiceD');
 const btnBack = document.querySelector('.goback-btn');
 
 
-// Declare an array of Object questions and answers
+// Declaration of an array of Object questions and answers
 let questions = [
     {
         question: 'What does HTML stands for?', 
@@ -95,14 +95,14 @@ let questions = [
 
 ];
 
-// The starting point of Questions
+// The starting point of Questions array
 let currentQuestion = 0;
 
 // Score count
 let score = 0;
 
 /*Start button. When clicked, intro, start button, score are set to none
-  Quoz are  is diplayed and timer starts
+  Quiz are diplayed and timer starts
 */
 startBtn.addEventListener('click', function(){
     startBtn.style.display = "none";
@@ -115,8 +115,10 @@ startBtn.addEventListener('click', function(){
     startTimer();
 });
 
+//setting an style attribute for question
 question.setAttribute("style", "font-size:20px; font-weight: 700");
-// Show questions
+
+// Show questions and choices
 function showQuestion(){
     question.textContent = questions[currentQuestion].question;
     choiceA.textContent= questions[currentQuestion].choiceA;
@@ -125,16 +127,19 @@ function showQuestion(){
     choiceD.textContent= questions[currentQuestion].choiceD;
 }
 
+// function for each choices to be applied to a click event
 function optionA(){checkAnswer('A')}
 function optionB(){checkAnswer('B')}
 function optionC(){checkAnswer('C')}
 function optionD(){checkAnswer('D')}
 
+// Click even on each choices
 choiceA.addEventListener('click', optionA);
 choiceB.addEventListener('click', optionB);
 choiceC.addEventListener('click', optionC);
 choiceD.addEventListener('click', optionD);
 
+// function to check for the correct answers
 function checkAnswer(correct){
     if(questions[currentQuestion].correct == correct){
         score++;
@@ -146,8 +151,7 @@ function checkAnswer(correct){
 
     currentQuestion ++;
 
-    if (currentQuestion < questions.length){
-       // currentQuestion ++;      
+    if (currentQuestion < questions.length){    
         showQuestion();
     }
     else{
@@ -155,12 +159,14 @@ function checkAnswer(correct){
     }
 }
 
+// function if answer is correct to be displayed
 function isCorrect(){
     result.textContent ="Answer is correct!";
     result.setAttribute('style', 'color:lightgreen; font-weight: bold;')
     //console.log(a);
 }
 
+// function if answer is wrong to be dispalyed
 function isWrong(){
     result.textContent = "Answer is not correct!"
     let wrong = result;
@@ -173,9 +179,10 @@ function isWrong(){
     }
 }
 
-
+// Set timer to 60 seconds
 let timerCount = 60;
 
+// function to start timer
 function startTimer() {
   // Sets timer
     let timer = setInterval(function() {
@@ -196,19 +203,16 @@ function startTimer() {
   }, 1000);
 }
 
-//function to record initial and score to be displayed
-
-
+//function to record user initial and score to be displayed
 function showInitial(event){
     event.preventDefault();
 
     let textInput = intitialInput.value;
     
+    // if no input from user, an alert is displayed
     if(!textInput || textInput === ''){
         alert('Please enter an initial before continuing');
     }else{
-
-    
 
     let message = `${textInput.toUpperCase()} has scored ${score} out of ${questions.length} questions`;
 
@@ -223,9 +227,10 @@ function showInitial(event){
     }
 }
 
+// Submit button after user initial is entered
 submitBtn.addEventListener('click', showInitial);
 
-
+// function when game is over
 function gameover(){
     if(timerCount == 0){
         quizEl.style.display = "none";
@@ -235,12 +240,14 @@ function gameover(){
     }
 }
 
+// function to reset game
 function resetTimer(){
     timerElement.innerHTML = 0;
     quizEl.style.display = "none";
     highscore.style.display= "flex";
 }
 
+// back button function to return to landing page
 btnBack.addEventListener('click', function(){
 
     window.location.reload();
