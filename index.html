@@ -54,7 +54,7 @@
         <!-- User intitial input area. User will only be able to enter alphabets -->
         <section id="form-initial">
           <form>
-            <input id="input-text" readonly >
+            <textarea id="input-text" cols="30" rows="3" readonly></textarea>
             <input type="text" id="initial" placeholder="Enter Initial" maxlength="5" onkeypress="return (event.charCode > 64 && 
             event.charCode < 91) || (event.charCode > 96 && event.charCode < 123)">
             <input type="submit" value="Submit" id="btn-initial">

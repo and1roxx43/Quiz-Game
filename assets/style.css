@@ -207,6 +207,8 @@ h3, p {
     font-size: 20px;
     padding: 30px;
     outline: none;
+    width: 500px;
+
 }
 
 /* section of back button */
@@ -288,9 +290,6 @@ footer p {
 
 /* media screen for max width of 812px */
 @media screen and (max-width:812px){
-    body {
-        height: 100vh;
-    }
 
     h1{
         font-size: 1.5rem;
@@ -333,6 +332,12 @@ footer p {
       #intro {
        width: 100%;
    }
+
+   .container{
+    margin: 50px 20px;
+   }
+
+
     h1{
        font-size: 1.5rem;
    } 
@@ -352,7 +357,12 @@ footer p {
         width: 100%;
     }
     #form-initial input{
-        width: 370px
+        width: 350px;
+    }
+
+    #input-text {
+        width: 350px;
+        font-size: 15px;
     }
 
 }

@@ -37,7 +37,7 @@ const choiceD = document.getElementById('choiceD');
 const btnBack = document.querySelector('.goback-btn');
 
 
-// Declaration of an array of Object questions and answers
+// Declare of an array of Object questions and answers
 let questions = [
     {
         question: 'What does HTML stands for?', 
@@ -95,7 +95,7 @@ let questions = [
 
 ];
 
-// The starting point of Questions array
+// The starting index of Questions array
 let currentQuestion = 0;
 
 // Score count
@@ -115,7 +115,7 @@ startBtn.addEventListener('click', function(){
     startTimer();
 });
 
-//setting an style attribute for question
+//setting a style attribute for question
 question.setAttribute("style", "font-size:20px; font-weight: 700");
 
 // Show questions and choices
@@ -203,20 +203,27 @@ function startTimer() {
   }, 1000);
 }
 
-//function to record user initial and score to be displayed
+//function to save user initial and score in local storage to be displayed
 function showInitial(event){
     event.preventDefault();
 
-    let textInput = intitialInput.value;
+    let user = {
+        initial: intitialInput.value.trim(),
+        final: score
+    };
     
-    // if no input from user, an alert is displayed
-    if(!textInput || textInput === ''){
+   localStorage.setItem('user', JSON.stringify(user));
+
+   let message = JSON.parse(localStorage.getItem('user'));
+
+    let textInput = message.initial;
+
+     // if no input from user, an alert is displayed
+     if(!textInput || textInput === ''){
         alert('Please enter an initial before continuing');
     }else{
 
-    let message = `${textInput.toUpperCase()} has scored ${score} out of ${questions.length} questions`;
-
-    inputText.value = message;
+    inputText.textContent = `${textInput.toUpperCase()} has scored ${message.final} out of ${questions.length} questions`;
 
     inputText.style.display = "block";
     intitialInput.style.display = "none";
