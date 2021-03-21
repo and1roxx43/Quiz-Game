@@ -76,7 +76,7 @@ let questions = [
     },
 
     {
-        question: 'How do you write "Hello World" in an alert box?',
+        question: 'How do you write "Alert!" in an alert box?',
         choiceA: 'alertBox("Alert!")', choiceB: 'msgBox("Alert!")', choiceC: 'alert("Alert!")', choiceD: 'println("Alert!")',
         correct: 'C'
     },

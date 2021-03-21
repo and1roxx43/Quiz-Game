@@ -21,6 +21,10 @@ ___
 
 ___
  ### This webpage is responsive and can be viewed on normal screen size, 1450px, 1090px, 812px, 768px, and 375px
+___
+### Other features
+- user won't be allowed to enter any numbers in the initial text field.
+- An alert will be displayed to the user if no input is entered in the initial field.
  
 ___
 ### Images
